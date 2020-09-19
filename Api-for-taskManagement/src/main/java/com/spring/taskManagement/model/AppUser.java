@@ -28,9 +28,7 @@ public class AppUser implements Serializable {
 	private String username;
 	private String password;
 	private boolean active;
-	@ManyToMany(fetch= FetchType.LAZY, 
-			    cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},
-			    mappedBy = "users")
+	@ManyToMany(fetch= FetchType.LAZY,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},mappedBy = "users")
 	private Set<AppRole> roles;
 	
 	
