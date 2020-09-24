@@ -1,13 +1,13 @@
 package com.spring.taskManagement.service;
 
-import java.util.Set;
+import java.util.List;
 
 import com.spring.taskManagement.model.Sector;
 
 public interface SectorService {
-	Set<Sector> getSectors();
-	Sector getSector();
-	boolean addSector(Sector user);
-	boolean updateSector(Sector user);
-	boolean deleteSector(int id);
+	List<Sector> getSectors();
+	Sector getSector(Long id);
+	Sector addSector(Sector sector);
+	boolean updateSector(Sector sector);
+	Sector deleteSector(Long id);
 }
