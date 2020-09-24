@@ -1,13 +1,13 @@
 package com.spring.taskManagement.service;
 
-import java.util.Set;
+import java.util.List;
 
 import com.spring.taskManagement.model.State;
 
 public interface StateService {
-	Set<State> getStates();
-	State getState();
-	boolean addState(State user);
-	boolean updateState(State user);
-	boolean deleteState(int id);
+	List<State> getStates();
+	State getState(Long id);
+	State addState(State state);
+	State updateState(State state);
+	State deleteState(Long id);
 }
