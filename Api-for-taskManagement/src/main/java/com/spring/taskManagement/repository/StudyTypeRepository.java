@@ -7,5 +7,5 @@ import com.spring.taskManagement.model.StudyType;
 
 @Repository
 public interface StudyTypeRepository extends JpaRepository<StudyType, Long>{
-
+	StudyType findByName(String name);
 }
