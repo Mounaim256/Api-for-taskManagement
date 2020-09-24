@@ -7,5 +7,5 @@ import com.spring.taskManagement.model.Pole;
 
 @Repository
 public interface PoleRepository extends JpaRepository<Pole, Long>{
-
+	Pole findByName(String name);
 }
