@@ -7,5 +7,5 @@ import com.spring.taskManagement.model.Task;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long>{
-
+	Task findByName(String name);
 }
