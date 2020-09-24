@@ -22,13 +22,13 @@ public class StudyTypeServiceImpl implements StudyTypeService {
 	}
 
 	@Override
-	public boolean addStudyType(StudyType user) {
+	public boolean addStudyType(StudyType studyType) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean updateStudyType(StudyType user) {
+	public boolean updateStudyType(StudyType studyType) {
 		// TODO Auto-generated method stub
 		return false;
 	}
