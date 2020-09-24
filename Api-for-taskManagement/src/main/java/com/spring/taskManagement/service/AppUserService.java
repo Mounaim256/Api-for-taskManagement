@@ -1,13 +1,13 @@
 package com.spring.taskManagement.service;
 
-import java.util.Set;
+import java.util.List;
 
 import com.spring.taskManagement.model.AppUser;
 
 public interface AppUserService {
-	Set<AppUser> getUsers();
+	List<AppUser> getUsers();
 	AppUser getUser(long id);
-	boolean addUser(AppUser user);
+	AppUser addUser(AppUser user);
 	boolean updateUser(AppUser user);
 	boolean deleteUser(long id);
 }
