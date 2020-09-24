@@ -1,13 +1,14 @@
 package com.spring.taskManagement.service;
 
-import java.util.Set;
+import java.util.List;
 
 import com.spring.taskManagement.model.Task;
 
 public interface TaskService {
-	Set<Task> getTasks();
-	Task getTask();
-	boolean addTask(Task user);
-	boolean updateTask(Task user);
+	List<Task> getTasks();
+	Task getTask(Long id);
+	Task getTaskByName(String name);
+	boolean addTask(Task task);
+	boolean updateTask(Task task);
 	boolean deleteTask(int id);
 }
