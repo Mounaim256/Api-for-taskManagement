@@ -1,13 +1,13 @@
 package com.spring.taskManagement.service;
 
-import java.util.Set;
+import java.util.List;
 
 import com.spring.taskManagement.model.Pole;
 
 public interface PoleService {
-	Set<Pole> getPoles();
-	Pole getPole();
-	boolean addPole(Pole user);
-	boolean updatePole(Pole user);
-	boolean deletePole(int id);
+	List<Pole> getPoles();
+	Pole getPole(Long id);
+	Pole addPole(Pole pole);
+	Pole updatePole(Pole pole);
+	Pole deletePole(Long id);
 }
