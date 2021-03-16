@@ -1,18 +1,24 @@
 package com.spring.taskManagement.service;
 
-import java.util.Set;
+import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.taskManagement.model.StudyType;
+import com.spring.taskManagement.repository.StudyTypeRepository;
 
 @Service
 public class StudyTypeServiceImpl implements StudyTypeService {
+	
+	@Autowired
+	private StudyTypeRepository studyTypeRepository;
 
 	@Override
-	public Set<StudyType> getStudyTypes() {
+	public List<StudyType> getStudyTypes() {
 		// TODO Auto-generated method stub
-		return null;
+		return studyTypeRepository.findAll();
 	}
 
 	@Override
@@ -22,9 +28,9 @@ public class StudyTypeServiceImpl implements StudyTypeService {
 	}
 
 	@Override
-	public boolean addStudyType(StudyType studyType) {
+	public StudyType addStudyType(StudyType studyType) {
 		// TODO Auto-generated method stub
-		return false;
+		return studyType != null ? studyTypeRepository.save(studyType) : null;
 	}
 
 	@Override
@@ -34,9 +40,13 @@ public class StudyTypeServiceImpl implements StudyTypeService {
 	}
 
 	@Override
-	public boolean deleteStudyType(int id) {
-		// TODO Auto-generated method stub
-		return false;
+	public StudyType deleteStudyType(Long id) {
+		Optional<StudyType> studyType = studyTypeRepository.findById(id);
+		if(studyType.isPresent()) {
+			studyTypeRepository.delete(studyType.get());
+			return studyType.get();
+		}
+		return null;
 	}
 
 }

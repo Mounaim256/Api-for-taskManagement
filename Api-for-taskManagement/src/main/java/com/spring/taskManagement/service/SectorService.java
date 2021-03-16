@@ -6,6 +6,7 @@ import com.spring.taskManagement.model.Sector;
 
 public interface SectorService {
 	List<Sector> getSectors();
+	List<Sector> getSectorsByProjectId(Long id);
 	Sector getSector(Long id);
 	Sector addSector(Sector sector);
 	boolean updateSector(Sector sector);

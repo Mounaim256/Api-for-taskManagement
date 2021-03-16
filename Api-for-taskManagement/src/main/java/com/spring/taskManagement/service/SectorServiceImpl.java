@@ -33,7 +33,7 @@ public class SectorServiceImpl implements SectorService {
 	@Override
 	public Sector addSector(Sector sector) {
 		if (sector != null) {
-			Project project = projectService.getProjectByame(sector.getProject().getName());
+			Project project = projectService.getProject(sector.getProject().getId());
 			sector.setProject(project);
 			return sectorRepository.save(sector);
 		}
@@ -54,6 +54,11 @@ public class SectorServiceImpl implements SectorService {
 			return sector.get();
 		}
 		return null;
+	}
+
+	@Override
+	public List<Sector> getSectorsByProjectId(Long id) {
+		return sectorRepository.findByProjectId(id);
 	}
 	
 }

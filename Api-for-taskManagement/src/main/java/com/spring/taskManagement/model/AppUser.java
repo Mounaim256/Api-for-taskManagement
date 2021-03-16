@@ -29,6 +29,7 @@ public class AppUser implements Serializable {
 	private String username;
 	private String password;
 	private boolean active;
+	
 	@ManyToMany(fetch= FetchType.EAGER)
 	private List<AppRole> roles;
 	

@@ -29,13 +29,28 @@ public class PoleServiceImpl implements PoleService {
 		Optional<Pole> pole = poleRepository.findById(id);
 		return pole.isPresent() ? pole.get() : null;
 	}
+	
+	@Override
+	public List<Pole> getPolesByTaskId(Long id) {
+		return id != null ? poleRepository.findByTaskId(id) : null;
+	}
+
+	@Override
+	public List<Pole> getPolesByProjectId(Long id) {
+		return poleRepository.findByTaskSectorProjectId(id);
+	}
+	
+	@Override
+	public List<Pole> getPolesNotAffected() {
+		return poleRepository.findByTaskIdIsNull();
+	}
 
 	@Override
 	public Pole addPole(Pole pole) {
 		if(pole != null) {
 			Task task = taskService.getTaskByName(pole.getName());
 			pole.setTask(task);
-			poleRepository.save(pole);
+			return poleRepository.save(pole);
 		}
 		return null;
 	}
@@ -45,7 +60,7 @@ public class PoleServiceImpl implements PoleService {
 		if(pole != null) {
 			Pole pl = poleRepository.findById(pole.getId()).get();
 			pl.setName(pole.getName());
-			pl.setNbrPoles(pole.getNbrPoles());
+			pl.setWorked(pole.isWorked());
 			pl.setType(pole.getType());
 			
 			return poleRepository.save(pl);

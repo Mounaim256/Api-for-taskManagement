@@ -28,10 +28,20 @@ public class PoleController {
 	public List<Pole> getAllPoles() {
 		return poleService.getPoles();
 	}
+	
+	@GetMapping("/polesNotAffected")
+	public List<Pole> getPolesNotAffected() {
+		return poleService.getPolesNotAffected();
+	}
 
 	@GetMapping("/poles/{id}")
-	public Pole getPole(@PathVariable Long id) {
-		return poleService.getPole(id);
+	public List<Pole> getPolesByTaskId(@PathVariable Long id) {
+		return poleService.getPolesByTaskId(id);
+	}
+	
+	@GetMapping("/polesByProject/{id}")
+	public List<Pole> getPolesByProjectId(@PathVariable Long id) {
+		return poleService.getPolesByProjectId(id);
 	}
 
 	@PostMapping("/poles")

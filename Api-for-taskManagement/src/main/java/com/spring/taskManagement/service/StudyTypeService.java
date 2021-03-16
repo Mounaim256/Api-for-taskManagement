@@ -1,13 +1,13 @@
 package com.spring.taskManagement.service;
 
-import java.util.Set;
+import java.util.List;
 
 import com.spring.taskManagement.model.StudyType;
 
 public interface StudyTypeService {
-	Set<StudyType> getStudyTypes();
+	List<StudyType> getStudyTypes();
 	StudyType getStudyType();
-	boolean addStudyType(StudyType studyType);
+	StudyType addStudyType(StudyType studyType);
 	boolean updateStudyType(StudyType studyType);
-	boolean deleteStudyType(int id);
+	StudyType deleteStudyType(Long id);
 }

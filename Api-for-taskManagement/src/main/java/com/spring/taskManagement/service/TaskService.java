@@ -6,9 +6,11 @@ import com.spring.taskManagement.model.Task;
 
 public interface TaskService {
 	List<Task> getTasks();
+	List<Task> getTasksByProjectId(Long id);
+	List<Task> getTasksByUserId(Long id);
 	Task getTask(Long id);
 	Task getTaskByName(String name);
-	boolean addTask(Task task);
-	boolean updateTask(Task task);
+	Task addTask(Task task);
+	Task updateTask(Task task);
 	boolean deleteTask(int id);
 }

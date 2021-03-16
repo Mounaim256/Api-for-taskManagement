@@ -28,9 +28,14 @@ public class SectorController {
 		return sectorService.getSectors();
 	}
 	
-	@GetMapping("/sectors/{id}")
+	/*@GetMapping("/sectors/{id}")
 	public Sector getSector(@PathVariable Long id){
 		return sectorService.getSector(id);
+	}*/
+	
+	@GetMapping("/sectors/{id}")
+	public List<Sector> getSectorByProjectId(@PathVariable Long id){
+		return sectorService.getSectorsByProjectId(id);
 	}
 	
 	@PostMapping("/sectors")
